@@ -1,22 +1,27 @@
 {
-  "name": "jhcr",
-  "version": "1.0.1",
+  "name": "jhcrts",
+  "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
-  "main": "dist/jhcr.js",
+  "dependencies": {
+    "browser-sync": "^2.18.8"
+  },
+  "devDependencies": {
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "php -S localhost:8000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmilad/jhcr.git"
+    "url": "git+https://github.com/mmilad/jhcrts.git"
   },
-  "author": "Milad Ashrafi Larijani",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mmilad/jhcr/issues"
+    "url": "https://github.com/mmilad/jhcrts/issues"
   },
-  "homepage": "https://github.com/mmilad/jhcr#readme"
+  "homepage": "https://github.com/mmilad/jhcrts#readme"
 }
