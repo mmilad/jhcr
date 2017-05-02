@@ -21,10 +21,10 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mmilad/jhcrts/issues"
+    "url": "https://github.com/mmilad/jhcr/issues"
   },
   "bin": {
     "jhcr": "index.js"
   },
-  "homepage": "https://github.com/mmilad/jhcrts#readme"
+  "homepage": "https://github.com/mmilad/jhcr#readme"
 }
