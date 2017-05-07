@@ -3,30 +3,32 @@ exports.run = function(config) {
     devDir = config.devDir;
     fs.mkdir(devDir, function (err) {
         fs.mkdir(devDir+'/src', function (err) {
-            fs.readFile(config.jhcrPath+'node_modules/jhcr/dist/jhcr.js', 'utf8', function(err, data) {
-                if (err) throw err;
-                fs.writeFile(config.devDir+'/jhcr.js', data);
+            fs.readFile(config.jhcrPath+'dist/jhcr.js', 'utf8', function(err, data) {
+                if (err) {
+                    console.log(err)
+                };
+                fs.writeFile(config.devDir+'/jhcr.js', data, logError);
             });
-            fs.writeFile(devDir+'/build.html', INDEX);
-            fs.mkdir(devDir+'/src/assets', function (err) {
-                console.log("assets created")
-            });
-            fs.mkdir(devDir+'/src/js', function (err) {
-                console.log("js created")
-            });
-            fs.mkdir('src/css', function (err) {
-                console.log("css created")
-            });
+            fs.writeFile(devDir+'/build.html', INDEX, logError);
+            fs.mkdir(devDir+'/src/assets', logError);
+            fs.mkdir(devDir+'/src/js', logError);
+            fs.mkdir('src/css', logError);
             fs.mkdir(devDir+'/src/components', function(err) {
                 fs.mkdir(devDir+'/src/components/main', function(err) {
-                    fs.writeFile(devDir+'/src/components/main/H.js', BASIC_COMPONENT);
-                    fs.writeFile(devDir+'/src/components/main/C.js', BASIC_STYLE);
+                    fs.writeFile(devDir+'/src/components/main/component.js', BASIC_COMPONENT, logError);
+                    fs.writeFile(devDir+'/src/components/main/style.js', BASIC_STYLE, logError);
                 });
             });
         });
     });
     console.log("initializing")
     // init end
+
+    function logError(err) {
+        if(err) {
+            console.log(err)
+        }
+    }
 }
 
 var INDEX = 

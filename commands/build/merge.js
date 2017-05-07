@@ -14,7 +14,11 @@ exports.run = function(config) {
                 if(MINIFY) {
                     FILESTRING = FILESTRING.replace(/(\r\n|\n|\r| )/gm,"");
                 }
-                fs.writeFile(DEST, FILESTRING);
+                fs.writeFile(DEST, FILESTRING,function(err) {
+                    if(err) {
+                        console.log(err)
+                    }
+                });
             }
         });
     }
