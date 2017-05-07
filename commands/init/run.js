@@ -7,12 +7,12 @@ exports.run = function(config) {
                 if (err) {
                     console.log(err)
                 };
-                fs.writeFile(config.devDir+'/jhcr.js', data, logError);
+                fs.writeFile(devDir+'/jhcr.js', data, logError);
             });
             fs.writeFile(devDir+'/build.html', INDEX, logError);
             fs.mkdir(devDir+'/src/assets', logError);
             fs.mkdir(devDir+'/src/js', logError);
-            fs.mkdir('src/css', logError);
+            fs.mkdir(devDir+'/src/css', logError);
             fs.mkdir(devDir+'/src/components', function(err) {
                 fs.mkdir(devDir+'/src/components/main', function(err) {
                     fs.writeFile(devDir+'/src/components/main/component.js', BASIC_COMPONENT, logError);
