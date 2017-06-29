@@ -10,9 +10,9 @@ J.registry["`+name+`"] = {
 
 exports.jstyle = function(name) {
     return `
-    J.C(
-        {"`+name+`": {
+J.C({
+    "`+name+`": {
 
-        }
-    });`
+    }
+});`
 }
